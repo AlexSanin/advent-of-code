@@ -50,3 +50,5 @@ function part1(lines) {
 function isSymbolAt(line, position) {
   return position >= 0 && position < line.length && /[^\d.]/.test(line[position]);
 }
+
+console.log('part1', part1())

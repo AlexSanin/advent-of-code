@@ -45,3 +45,4 @@ function part2(inputString) {
     .reduce((sum, product) => sum + product, 0);
 }
 console.log('part2', part2(lines))
+console.log('part1', part1(lines))

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const filename = 'input1.txt';
+const filename = 'input.txt';
 
 const input = fs.readFileSync(filename, 'utf8').trim().split('\n\n');
 

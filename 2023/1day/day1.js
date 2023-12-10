@@ -1042,17 +1042,12 @@ const calculateCalibrationValue = (values) => {
   let sum = 0;
   values.forEach(item => {
     const numbers = extractNumbers(item)
-    console.log('item', item)
-    console.log('numbers', numbers)
     const firstNumber = numbers[0]
     const lastNumber = numbers[numbers.length - 1]
-    console.log('result', Number(`${firstNumber}${lastNumber}`))
     sum += Number(`${firstNumber}${lastNumber}`);
   });
   return sum;
 };
-
-console.log('calculateCalibrationValue', calculateCalibrationValue(CALIBRATION_VALUE))
 
 function getFirstAndLastNumbers(inputString) {
     const numbers = inputString.match(/\d/g)
@@ -1079,4 +1074,4 @@ function replaceWordsWithNumbers(inputString) {
     return inputString
 }
 
-
+console.log('calculateCalibrationValue', calculateCalibrationValue(CALIBRATION_VALUE))
