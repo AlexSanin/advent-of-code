@@ -17,7 +17,7 @@ LJ...
 
 import { readFileSync } from 'node:fs'
 
-const filename = 'input.txt';
+const filename = 'input1.txt';
 const lines = readFileSync(filename, 'utf8').trim().split('\n');
 
 const MOVES = {
@@ -83,10 +83,14 @@ function tracePath(lines, start) {
   let { x, y, direction } = determineInitialDirection(lines, start);
   const path = [start, { x, y }];
   let steps = 1;
-
   while (x !== start.x || y !== start.y) {
     const char = lines[y][x];
-    ({ x, y, direction } = getNextPosition(char, direction, x, y));
+    console.log('char', char, 'x', x, 'y', y)
+    const newPosition = getNextPosition(char, direction, x, y);
+
+    x = newPosition.x;
+    y = newPosition.y;
+    direction = newPosition.direction;
     steps++;
     path.push({ x, y });
   }
